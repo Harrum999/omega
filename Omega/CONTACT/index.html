@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Get in Touch — Little Buckeye Learning Center</title>
+    <link rel="stylesheet" href="../HOMEPAGE/index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <nav class="navBar">
+        <div class="Nav_container">
+          <h1 class="logo"><a href="../HOMEPAGE/index.html">OmegaKidz</a></h1>
+          
+          <!-- ADD HAMBURGER BUTTON HERE -->
+          <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <ul class="Nav_links">
+            <li><a href="../ABOUT/index.html">About</a></li>
+            <li><a href="../PROGRAM/index.html">Program</a></li>
+            <li><a href="../CONTACT/index.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="contact-hero">
+        <div class="inner">
+          <h1>Get in Touch</h1>
+          <p>We'd love to hear from you. Whether you have questions about our programs, want to schedule a tour, or need support—our team is here to help.</p>
+          <button class="header-btn" onclick="location.href='../ABOUT/index.html'">About Us</button>
+        </div>
+      </section>
+
+      <section aria-label="Contact methods">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="icon">📞</div>
+            <h3>Call Us</h3>
+            <div class="muted">(614) 555-1234</div>
+            <div class="muted" style="margin-top:.5rem;font-size:.9rem">Mon–Fri, 7:00 AM – 6:00 PM</div>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">✉️</div>
+            <h3>Email Us</h3>
+            <div class="muted">hello@littlebuckeye.com</div>
+            <div class="muted" style="margin-top:.5rem;font-size:.9rem">We respond within 24 hours.</div>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">📍</div>
+            <h3>Visit Our Center</h3>
+            <div class="muted">123 Learning Lane, Columbus, OH 43215</div>
+            <div class="muted" style="margin-top:.5rem;font-size:.9rem">Tours available by appointment.</div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Contact form and map">
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <h2>Send Us a Message</h2>
+            <label for="fullname">Full Name</label>
+            <input id="fullname" name="fullname" type="text" required />
+
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" required />
+
+            <label for="age">Child's Age</label>
+            <select id="age" name="age" required>
+              <option value="">Choose...</option>
+              <option>Infants</option>
+              <option>Toddlers</option>
+              <option>Preschool</option>
+              <option>Multiple</option>
+            </select>
+
+            <label for="location">Center Location</label>
+            <select id="location" name="location" required>
+              <option value="">Choose...</option>
+              <option>Columbus</option>
+              <option>Delaware</option>
+              <option>Sunbury</option>
+              <option>Avon Lake</option>
+            </select>
+
+            <label for="message">Message <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <textarea id="message" name="message"></textarea>
+
+            <label style="display:flex;align-items:center;margin-top:.45rem">
+              <input type="checkbox" id="tour" name="tour" style="margin-right:.6rem"> 
+              I'd like to schedule a tour
+            </label>
+
+            <div style="margin-top:1rem;display:flex;gap:.6rem;align-items:center">
+              <button class="submit-btn" type="submit">Send Message</button>
+              <div class="privacy-note">We respect your privacy and will never share your information.</div>
+            </div>
+          </form>
+
+          <aside class="map-section">
+            <h3>Our Location & Hours</h3>
+            <div class="map-container">
+              <iframe width="100%" height="220" frameborder="0" style="border:0" src="https://www.google.com/maps?q=123+Learning+Lane+Columbus+OH+43215&output=embed" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+            <div class="hours">
+              <table>
+                <tr><td>Monday – Friday</td><td style="text-align:right">7:00 AM – 6:00 PM</td></tr>
+                <tr><td>Saturday</td><td style="text-align:right">9:00 AM – 1:00 PM (Tours Only)</td></tr>
+                <tr><td>Sunday</td><td style="text-align:right">Closed</td></tr>
+              </table>
+            </div>
+
+            <address>123 Learning Lane<br/>Columbus, OH 43215</address>
+          </aside>
+        </div>
+      </section>
+
+      <section class="faq-teaser">
+        <h3>Common Questions</h3>
+        <ul>
+          <li>What is your teacher-to-child ratio?</li>
+          <li>Do you offer part-time schedules?</li>
+          <li>How do you handle allergies and dietary needs?</li>
+          <li>What safety protocols are in place?</li>
+        </ul>
+        <a class="center-btn" href="#">View all FAQs →</a>
+      </section>
+
+      <!-- Footer copied from homepage to ensure consistency -->
+      <section>
+        <footer class="clean_footer" role="contentinfo">
+          <div class="clean_top">
+            <p class="lets-chat">Let's chat.</p>
+          </div>
+
+          <div class="clean_middle">
+            <address class="clean_contact">
+              <div class="addr">3033 Riverside Drive<br/>Cincinnati, OH 45226</div>
+              <div class="phone">Phone: <a href="tel:+15139283488">(513) 928-3488</a></div>
+            </address>
+          </div>
+
+          <div class="clean_bottom">
+            <hr class="clean-sep" aria-hidden="true" />
+            <div class="clean_copyright">Copyright © 2024 Worth Law. All rights reserved.</div>
+            <nav class="clean_nav" aria-label="Footer navigation">
+              <a href="#">About</a>
+              <span class="sep">|</span>
+              <a href="#">Services</a>
+              <span class="sep">|</span>
+              <a href="#">Contact us</a>
+            </nav>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <!-- ADD THIS JAVASCRIPT -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.Nav_links');
+        
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+          
+          // Close menu when clicking on a link
+          const navLinksItems = document.querySelectorAll('.Nav_links a');
+          navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+              menuToggle.classList.remove('active');
+              navLinks.classList.remove('active');
+            });
+          });
+        }
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+          e.preventDefault();
+          // Basic demo feedback - replace with real submission as needed
+          alert('Thanks — your message has been received. We\'ll be in touch soon!');
+          e.target.reset();
+        });
+      });
+    </script>
+  </body>
+</html>

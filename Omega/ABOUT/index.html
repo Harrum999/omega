@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../HOMEPAGE/index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+    <title>About</title>
+</head>
+
+<body>
+    <main>
+        <nav class="navBar">
+            <div class="Nav_container">
+                <h1 class="logo"><a href="../HOMEPAGE/index.html">OmegaKidz</a></h1>
+                
+                <!-- ADD HAMBURGER BUTTON HERE -->
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="Nav_links">
+                    <li><a href="../ABOUT/index.html">About</a></li>
+                    <li><a href="../PROGRAM/index.html">Program</a></li>
+                    <li><a href="../CONTACT/index.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section style="padding: 4vw; max-width: 1000px; margin: 0 auto" class="hero">
+            <h1 style="margin-bottom: 2vw; font-size: 3.5vw">
+                Our Story & Vision
+            </h1>
+            <p>
+                OmegaKidz was built on the belief that every child deserves a strong, happy start in life. What began as
+                a dream to create a nurturing learning space has grown into a community where curiosity is encouraged
+                and individuality is celebrated. We focus on building confidence, kindness, and creativity so children
+                feel supported as they discover the world around them.
+            </p>
+            <br />
+            <p style="margin-bottom: 2vw">
+                Our vision is to create an environment where learning feels natural and exciting, where children feel
+                safe to express themselves, and where families feel confident knowing their little ones are cared for
+                with patience and dedication every single day.
+            </p>
+        </section>
+        <section>
+            <div class="cards-panel two-col" style="margin-top: 3vw">
+                <div class="text_card">
+                    <h1>Meet Our Caring Team</h1>
+                    <p>
+                        At OmegaKidz, our team is the heart of everything we do. Each member of our staff is carefully
+                        selected not only for their professional training and experience, but for their genuine love of
+                        working with children. We believe a warm, supportive environment begins with people who are
+                        patient, compassionate, and committed to helping every child feel safe, confident, and valued.
+                        From early learning specialists to nurturing caregivers, our educators work together to create
+                        meaningful daily experiences that inspire curiosity, creativity, and growth.
+                    </p>
+                </div>
+
+                <div class="image_card" aria-hidden="true">
+                    <img src="teacher-preschool-students-playing-with-balls-sitting-floor-kindergarten.jpg"
+                        alt="Our Staff"
+                        style="padding-right: 2vw; border-bottom-left-radius: 4vw; border-top-left-radius: 4vw;" />
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="cards-panel two-col reverse" style="margin-top: 5vw; margin-bottom: 2vw">
+                <div class="text_card">
+                    <h1>A Place Your Child Can Thrive</h1>
+                    <p>
+                        OmegaKidz was created with one simple mission — to provide a safe, joyful, and inspiring
+                        space where children can learn, explore, and grow with confidence. We understand that early
+                        childhood is a special and important stage of life, which is why we focus on nurturing the
+                        whole child through play, creativity, and structured learning experiences. Every day, we
+                        strive to build a warm environment that feels like a second home for both children and
+                        parents.
+                    </p>
+                </div>
+
+                <div class="image_card" aria-hidden="true">
+                    <img src="https://media.newyorker.com/photos/61f55dcc2e7f7e7d51764b1a/master/w_2560%2Cc_limit/Hilgers-daycare-01.jpg"
+                        alt="Our Staff"
+                        style="padding-left: 2vw; border-bottom-right-radius: 4vw; border-top-right-radius: 4vw;" />
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="para">
+                <h1>Why Families Choose OmegaKidz</h1>
+                <p>
+                    Families choose OmegaKidz because we go beyond simple childcare — we create meaningful experiences
+                    that help children grow emotionally, socially, and intellectually. Our approach blends structured
+                    learning with playful exploration, allowing children to develop confidence while having fun in a
+                    safe and supportive setting. <br> <br> We are committed to building trust with every family we serve by providing a welcoming environment, consistent care, and a strong foundation that prepares children for the exciting journey ahead.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <footer class="clean_footer" role="contentinfo">
+                <div class="clean_top">
+                    <p class="lets-chat">Let's chat.</p>
+                </div>
+
+                <div class="clean_middle">
+                    <address class="clean_contact">
+                        <div class="addr">
+                            3033 Riverside Drive<br />Cincinnati, OH 45226
+                        </div>
+                        <div class="phone">
+                            Phone: <a href="tel:+15139283488">(513) 928-3488</a>
+                        </div>
+                    </address>
+                </div>
+
+                <div class="clean_bottom">
+                    <hr class="clean-sep" aria-hidden="true" />
+                    <div class="clean_copyright">
+                        Copyright © 2024 Worth Law. All rights reserved.
+                    </div>
+                    <nav class="clean_nav" aria-label="Footer navigation">
+                        <a href="#">About</a>
+                        <span class="sep">|</span>
+                        <a href="#">Services</a>
+                        <span class="sep">|</span>
+                        <a href="#">Contact us</a>
+                    </nav>
+                </div>
+            </footer>
+        </section>
+    </main>
+    
+    <!-- ADD THIS JAVASCRIPT -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.Nav_links');
+        
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+          
+          // Close menu when clicking on a link
+          const navLinksItems = document.querySelectorAll('.Nav_links a');
+          navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+              menuToggle.classList.remove('active');
+              navLinks.classList.remove('active');
+            });
+          });
+        }
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1007 @@
+/* ===== SIMPLE HAMBURGER FIX ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.navBar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 80px;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.Nav_container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: relative;
+}
+
+.logo {
+    color: #2A5D32;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HAMBURGER BUTTON - SIMPLE & CLEAN */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    width: 36px;
+    height: 36px;
+    position: relative;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #2A5D32;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* X animation when active */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.Nav_links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Nav_links a {
+    color: #2B1B0F;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.Nav_links a::before,
+.Nav_links a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: #2A5D32;
+    bottom: 0;
+    width: 50%;
+    transform: scaleX(0);
+    transition: transform 240ms cubic-bezier(.2,.9,.2,1);
+}
+
+.Nav_links a::before { left: 0; transform-origin: left; }
+.Nav_links a::after { right: 0; transform-origin: right; }
+.Nav_links a:hover::before,
+.Nav_links a:hover::after { transform: scaleX(1); }
+
+.header {
+    width: 100vw;
+    height: 70vh;
+    min-height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.text {
+    width: 50%;
+    max-width: 50vw;
+    min-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 5vw;
+}
+
+.text h1 {
+    font-size: 3.5vw;
+    padding-bottom: 1.5vw;
+    color: #2B1B0F;
+    line-height: 1.2;
+}
+
+.text button {
+    width: 160px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    background-color: #2A5D32;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.text button:hover {
+    background-color: #1e4724;
+}
+
+.image {
+    width: 50vw;
+    height: 41vw;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image .slider-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: slide-fade 12s linear infinite;
+}
+
+.image .slider-img:nth-of-type(1) { animation-delay: 0s; }
+.image .slider-img:nth-of-type(2) { animation-delay: 4s; }
+.image .slider-img:nth-of-type(3) { animation-delay: 8s; }
+
+@keyframes slide-fade {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.header .text { position: relative; z-index: 2; }
+
+.story {
+    height: auto;
+    width: 100vw;
+    margin-top: 4vw;
+    padding: 4vw 2.5vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2vw;
+    flex-wrap: wrap;
+}
+
+.Story_text {
+    flex: 1;
+    min-width: 300px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.Story_text h1 {
+    font-size: 3vw;
+    padding-bottom: 2vw;
+    color: #2B1B0F;
+}
+
+.Story_text p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1.5vw;
+}
+
+.qoute {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.qoute1 {
+    position: relative;
+    background: #ffffff;
+    padding: 1.5vw;
+    border-radius: 0.8vw;
+    box-shadow: 0 0.5vw 1.2vw rgba(0,0,0,0.12);
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-left: 0.6vw solid #2ecc71;
+}
+
+.qoute1 p {
+    margin: 0;
+    color: #222;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.qoute1::before {
+    content: '"';
+    position: absolute;
+    top: 0.6vw;
+    left: 1.6vw;
+    font-size: 3vw;
+    color: rgba(0,0,0,0.03);
+    pointer-events: none;
+}
+
+.centers_section { 
+    padding: 4vw 2.5vw; 
+    background: transparent; 
+}
+
+.centers_container {
+    display: flex;
+    gap: 2vw;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.center-card {
+    flex: 1;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #111;
+    min-height: 300px;
+}
+
+.center-card:not(:last-child) { 
+    border-right: 1px solid rgba(16,24,40,0.04); 
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.card-image img { 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.card-head { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.9rem; 
+}
+
+.card-icon { 
+    flex: 0 0 auto; 
+}
+
+.center-card h3 { 
+    margin: 0; 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    color: #2A5D32;
+}
+
+.center-card p { 
+    margin: 0; 
+    color: #444; 
+    font-size: 0.98rem; 
+    line-height: 1.5; 
+}
+
+.center-btn {
+    display: inline-block;
+    margin-top: auto;
+    background: #2ecc71;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 160ms ease, transform 160ms ease;
+    text-align: center;
+}
+
+.center-btn:hover { 
+    background: #26b86a; 
+    transform: translateY(-2px); 
+}
+
+.center-card { 
+    transition: transform 180ms ease, box-shadow 180ms ease; 
+}
+
+.center-card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 18px 40px rgba(16,24,40,0.08); 
+}
+
+.footer {
+    width: 100vw;
+    height: auto;
+    background-color: rgb(0, 84, 27);
+    margin-top: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4vw;
+    gap: 2vw;
+}
+
+.footer h1 {
+    font-size: 2.2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.footer button {
+    width: 180px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background-color: white;
+    color: rgb(0, 84, 27);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer button:hover {
+    background-color: #f0f0f0;
+}
+
+.clean_footer {
+    background: #071217;
+    color: #f7f7f7;
+    padding: 4vw 2.5vw;
+    font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vw;
+    align-items: center;
+}
+
+.clean_top .lets-chat {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.clean_middle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.clean_contact {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.clean_contact .addr,
+.clean_contact .phone {
+    margin-bottom: 0.5rem;
+}
+
+.clean_bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.clean-sep {
+    width: 60%;
+    max-width: 720px;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    border: none;
+}
+
+.clean_copyright {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.clean_nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.clean_nav a {
+    color: #f7f7f7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.clean_nav a::before,
+.clean_nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: #f7f7f7;
+    bottom: 0;
+    width: 50%;
+    transform: scaleX(0);
+    transition: transform 240ms cubic-bezier(.2,.9,.2,1);
+}
+
+.clean_nav a::before { left: 0; transform-origin: left; }
+.clean_nav a::after { right: 0; transform-origin: right; }
+.clean_nav a:hover::before,
+.clean_nav a:hover::after { transform: scaleX(1); }
+
+.clean_nav .sep { color: rgba(255,255,255,0.5); }
+
+/* ===== RESPONSIVE - SIMPLE FIX ===== */
+
+/* Mobile & Tablet: Show hamburger, hide links by default */
+@media screen and (max-width: 1024px) {
+    .navBar {
+        height: auto;
+        padding: 15px 0;
+    }
+    
+    .Nav_container {
+        padding: 0 20px;
+    }
+    
+    .menu-toggle {
+        display: block !important; /* Force show hamburger */
+        right: 20px;
+    }
+    
+    /* Hide links by default, show when active */
+    .Nav_links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .Nav_links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .Nav_links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .Nav_links a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+    
+    .Nav_links a:hover {
+        background-color: #f8f9fa;
+    }
+    
+    /* Header */
+    .header {
+        height: auto;
+        min-height: auto;
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .text {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .text h1 {
+        font-size: 2.2rem;
+        padding-bottom: 15px;
+    }
+    
+    .text button {
+        width: 180px;
+        height: 50px;
+        font-size: 1rem;
+        border-radius: 30px;
+    }
+    
+    .image {
+        width: 100%;
+        height: 350px;
+    }
+    
+    /* Story */
+    .story {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .Story_text {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .Story_text h1 {
+        font-size: 2rem;
+        padding-bottom: 15px;
+    }
+    
+    .Story_text p {
+        font-size: 1rem;
+    }
+    
+    .qoute {
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .qoute1 {
+        padding: 20px;
+    }
+    
+    .qoute1 p {
+        font-size: 1rem;
+    }
+    
+    /* Cards */
+    .centers_container {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .center-card {
+        width: 100%;
+        min-height: auto;
+    }
+    
+    .center-card:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(16,24,40,0.04);
+        padding-bottom: 25px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 40px 20px;
+        gap: 25px;
+    }
+    
+    .footer h1 {
+        font-size: 1.8rem;
+    }
+    
+    .footer p {
+        font-size: 1rem;
+    }
+    
+    .footer button {
+        width: 180px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    /* Clean Footer */
+    .clean_footer {
+        padding: 40px 20px;
+    }
+    
+    .clean_top .lets-chat {
+        font-size: 1.6rem;
+    }
+    
+    .clean_contact {
+        font-size: 0.9rem;
+    }
+    
+    .clean_nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop: Hide hamburger, show links inline */
+@media screen and (min-width: 1025px) {
+    .menu-toggle {
+        display: none !important;
+    }
+    
+    .Nav_links {
+        display: flex !important;
+    }
+}
+
+/* Mobile: 480px to 767px */
+@media screen and (max-width: 767px) {
+    /* HOMEPAGE MOBILE: remove extra gap under navbar */
+    nav.navBar {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Ensure first content sits flush under the nav */
+    nav.navBar + .header,
+    nav.navBar + section,
+    nav.navBar + .hero {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    .Nav_container {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .menu-toggle {
+        right: 15px;
+    }
+    
+    .Nav_links {
+        top: 60px;
+        padding: 10px 0;
+    }
+    
+    /* Header */
+    .header {
+        padding: 30px 15px;
+        gap: 25px;
+    }
+    
+    .text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .text button {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .image {
+        height: 250px;
+        order: -1;
+    }
+    
+    /* Story */
+    .story {
+        padding: 30px 15px;
+        gap: 25px;
+    }
+    
+    .Story_text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .Story_text p {
+        font-size: 0.95rem;
+    }
+    
+    .qoute1 {
+        padding: 15px;
+    }
+    
+    /* Cards */
+    .centers_container {
+        gap: 20px;
+    }
+    
+    .card-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .center-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .center-card p {
+        font-size: 0.95rem;
+    }
+    
+    .center-btn {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+    
+    .footer h1 {
+        font-size: 1.6rem;
+    }
+    
+    .footer p {
+        font-size: 0.95rem;
+    }
+    
+    .footer button {
+        width: 100%;
+        max-width: 250px;
+        height: 45px;
+        font-size: 0.95rem;
+    }
+    
+    /* Clean Footer */
+    .clean_footer {
+        padding: 30px 15px;
+        gap: 15px;
+    }
+    
+    .clean_top .lets-chat {
+        font-size: 1.4rem;
+    }
+    
+    .clean_contact {
+        font-size: 0.85rem;
+    }
+    
+    .clean_nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .clean_nav .sep {
+        display: none;
+    }
+    
+    .clean_nav a {
+        font-size: 0.85rem;
+        padding: 8px 0;
+    }
+}
+
+/* EXTRA-AGGRESSIVE HOMEPAGE MOBILE FIX: force zero gap under nav */
+@media screen and (max-width: 767px) {
+    /* Ensure nav sits at very top */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    nav.navBar {
+        position: sticky !important;
+        top: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+    }
+
+    /* Force the first section to be flush under the nav */
+    main > section:first-of-type,
+    main > section:first-of-type .header,
+    .header {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        position: relative !important;
+        top: 0 !important;
+    }
+
+    /* Remove any invisible offset from transforms */
+    .Nav_links,
+    .Nav_links.active {
+        transform: none !important;
+    }
+
+    /* If any script added inline styles, override them */
+    [style*="margin-top"] {
+        margin-top: 0 !important;
+    }
+}
+
+/* Small Mobile: below 480px */
+@media screen and (max-width: 480px) {
+    .text h1 {
+        font-size: 1.6rem;
+    }
+    
+    .Story_text h1 {
+        font-size: 1.6rem;
+    }
+    
+    .footer h1 {
+        font-size: 1.4rem;
+    }
+    
+    .center-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .center-card p {
+        font-size: 0.9rem;
+    }
+    
+    .clean_top .lets-chat {
+        font-size: 1.3rem;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Make buttons tap-friendly on mobile */
+@media (max-width: 767px) {
+    button, 
+    .center-btn, 
+    .text button, 
+    .footer button,
+    .Nav_links a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu-toggle {
+        min-height: 44px;
+    }
+}
+
+/* FINAL HOMEPAGE-ONLY MOBILE OVERRIDE: remove any remaining top gap */
+@media screen and (max-width: 767px) {
+    /* target the nav and the very first content section */
+    nav.navBar {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Remove any top spacing on the first section/hero/header */
+    main > section:first-of-type,
+    main > section:first-of-type .header,
+    .header,
+    .hero,
+    .contact-hero {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* ensure Nav_container padding doesn't add visible gap */
+    .Nav_container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* Mobile navbar spacing fix: remove gap under sticky nav */
+@media screen and (max-width: 767px) {
+    html, body, main {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav.navBar {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+    }
+
+    /* Ensure the first element after nav sits flush against it */
+    nav.navBar + * {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* Aggressive reset for first-section spacing on small screens */
+@media screen and (max-width: 767px) {
+    nav.navBar + section,
+    nav.navBar + .header,
+    nav.navBar + .hero,
+    nav.navBar + .contact-hero {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* Also remove top padding inside common hero/header blocks */
+    .header, .hero, .contact-hero {
+        padding-top: 0 !important;
+    }
+}
+
+/* HOMEPAGE ONLY: aggressive mobile reset to remove any top gap */
+@media screen and (max-width: 767px) {
+    /* ensure first content sits flush under the nav on homepage */
+    nav.navBar + * {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* remove top padding from common header sections */
+    .header, .hero {
+        padding-top: 0 !important;
+    }
+}
