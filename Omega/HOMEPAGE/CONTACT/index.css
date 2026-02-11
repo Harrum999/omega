@@ -591,3 +591,61 @@ html, body {
         padding-top: 0 !important;
     }
 }
+/* Hamburger menu icon visibility fixes */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    width: 36px;
+    height: 36px;
+    position: relative;
+}
+
+.menu-toggle span {
+    display: block !important;
+    width: 24px;
+    height: 2px;
+    background-color: #2A5D32 !important;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Show hamburger only on mobile */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block !important;
+    }
+    
+    .Nav_links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .Nav_links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Ensure no parent is hiding the icons */
+.navBar * {
+    overflow: visible !important;
+}

@@ -6,23 +6,35 @@
     font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Reset for consistency */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== NAVBAR FIX - SIMPLE & CLEAN ===== */
 .navBar {
     position: sticky;
     top: 0;
-    z-index: 999;
-    height: 80px;
+    z-index: 9999;
     width: 100%;
     background: #ffffff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 0;
+    margin: 0;
 }
 
 .Nav_container {
-    height: 100%;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
     position: relative;
+    margin: 0 auto;
+    max-width: 1400px;
 }
 
 .logo {
@@ -30,6 +42,7 @@
     margin: 0;
     font-size: 1.8rem;
     font-weight: 700;
+    z-index: 1001;
 }
 
 .logo a {
@@ -43,11 +56,14 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    z-index: 1001;
-    width: 36px;
-    height: 36px;
+    padding: 10px;
+    z-index: 1002;
+    width: 40px;
+    height: 40px;
     position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-toggle span {
@@ -55,7 +71,7 @@
     width: 24px;
     height: 2px;
     background-color: #2A5D32;
-    margin: 5px 0;
+    margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
 }
@@ -89,6 +105,11 @@
     padding-bottom: 6px;
     font-weight: 500;
     font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.Nav_links a:hover {
+    color: #2A5D32;
 }
 
 .Nav_links a::before,
@@ -108,32 +129,33 @@
 .Nav_links a:hover::before,
 .Nav_links a:hover::after { transform: scaleX(1); }
 
+/* ===== HEADER/HERO SECTION ===== */
 .header {
-    width: 100vw;
-    height: 70vh;
-    min-height: 420px;
+    width: 100%;
+    min-height: 80vh;
     position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
+    background: #ffffff;
 }
 
 .text {
-    width: 50%;
-    max-width: 50vw;
-    min-width: 300px;
+    flex: 1;
+    padding: 0 5%;
+    max-width: 50%;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    flex-direction: column;
-    padding-left: 5vw;
 }
 
 .text h1 {
-    font-size: 3.5vw;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
     padding-bottom: 1.5vw;
     color: #2B1B0F;
     line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .text button {
@@ -145,20 +167,22 @@
     background-color: #2A5D32;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     margin-top: 20px;
+    font-weight: 600;
 }
 
 .text button:hover {
     background-color: #1e4724;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 93, 50, 0.3);
 }
 
 .image {
-    width: 50vw;
-    height: 41vw;
+    flex: 1;
+    height: 80vh;
     overflow: hidden;
     position: relative;
-    z-index: 0;
 }
 
 .image img {
@@ -191,64 +215,54 @@
     100% { opacity: 0; }
 }
 
-.header .text { position: relative; z-index: 2; }
-
+/* ===== STORY SECTION ===== */
 .story {
-    height: auto;
-    width: 100vw;
-    margin-top: 4vw;
-    padding: 4vw 2.5vw;
+    width: 100%;
+    padding: 80px 5%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 2vw;
+    gap: 50px;
     flex-wrap: wrap;
+    background: #ffffff;
 }
 
 .Story_text {
     flex: 1;
     min-width: 300px;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
 }
 
 .Story_text h1 {
-    font-size: 3vw;
+    font-size: clamp(2rem, 3vw, 3rem);
     padding-bottom: 2vw;
     color: #2B1B0F;
+    margin-bottom: 20px;
 }
 
 .Story_text p {
     font-size: 1.1rem;
     color: #333;
-    line-height: 1.6;
-    margin-bottom: 1.5vw;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
 .qoute {
-    flex: 0 0 40%;
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 1.5vw;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
+    gap: 25px;
 }
 
 .qoute1 {
     position: relative;
     background: #ffffff;
-    padding: 1.5vw;
-    border-radius: 0.8vw;
-    box-shadow: 0 0.5vw 1.2vw rgba(0,0,0,0.12);
-    width: 100%;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    border-left: 0.6vw solid #2ecc71;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #2ecc71;
 }
 
 .qoute1 p {
@@ -262,21 +276,22 @@
 .qoute1::before {
     content: '"';
     position: absolute;
-    top: 0.6vw;
-    left: 1.6vw;
-    font-size: 3vw;
+    top: 10px;
+    left: 20px;
+    font-size: 3rem;
     color: rgba(0,0,0,0.03);
     pointer-events: none;
 }
 
+/* ===== CARDS SECTION ===== */
 .centers_section { 
-    padding: 4vw 2.5vw; 
+    padding: 80px 5%; 
     background: transparent; 
 }
 
 .centers_container {
     display: flex;
-    gap: 2vw;
+    gap: 30px;
     justify-content: space-between;
     align-items: stretch;
     max-width: 1200px;
@@ -286,26 +301,28 @@
 .center-card {
     flex: 1;
     background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 0.8rem;
+    padding: 25px;
+    border-radius: 12px;
     box-shadow: 0 8px 24px rgba(16,24,40,0.06);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 15px;
     color: #111;
-    min-height: 300px;
+    min-height: 350px;
+    transition: all 0.3s ease;
 }
 
-.center-card:not(:last-child) { 
-    border-right: 1px solid rgba(16,24,40,0.04); 
+.center-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(16,24,40,0.1);
 }
 
 .card-image {
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-radius: 0.8rem;
-    margin-bottom: 1rem;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .card-image img { 
@@ -318,16 +335,12 @@
 .card-head { 
     display: flex; 
     align-items: center; 
-    gap: 0.9rem; 
-}
-
-.card-icon { 
-    flex: 0 0 auto; 
+    gap: 15px; 
 }
 
 .center-card h3 { 
     margin: 0; 
-    font-size: 1.1rem; 
+    font-size: 1.3rem; 
     font-weight: 700; 
     color: #2A5D32;
 }
@@ -335,8 +348,9 @@
 .center-card p { 
     margin: 0; 
     color: #444; 
-    font-size: 0.98rem; 
-    line-height: 1.5; 
+    font-size: 1rem; 
+    line-height: 1.6; 
+    flex-grow: 1;
 }
 
 .center-btn {
@@ -344,55 +358,47 @@
     margin-top: auto;
     background: #2ecc71;
     color: white;
-    padding: 0.6rem 1rem;
-    border-radius: 0.6rem;
+    padding: 12px 20px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: background 160ms ease, transform 160ms ease;
+    transition: all 0.3s ease;
     text-align: center;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
 }
 
 .center-btn:hover { 
     background: #26b86a; 
-    transform: translateY(-2px); 
+    transform: translateY(-3px);
 }
 
-.center-card { 
-    transition: transform 180ms ease, box-shadow 180ms ease; 
-}
-
-.center-card:hover { 
-    transform: translateY(-6px); 
-    box-shadow: 0 18px 40px rgba(16,24,40,0.08); 
-}
-
+/* ===== CTA SECTION ===== */
 .footer {
-    width: 100vw;
-    height: auto;
+    width: 100%;
     background-color: rgb(0, 84, 27);
-    margin-top: 4vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 4vw;
-    gap: 2vw;
+    padding: 80px 5%;
+    text-align: center;
+    color: white;
 }
 
 .footer h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 2.5vw, 2.8rem);
     color: white;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.3;
 }
 
 .footer p {
     color: white;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
     text-align: center;
     max-width: 800px;
-    line-height: 1.5;
-    margin-bottom: 2rem;
+    line-height: 1.6;
+    margin: 0 auto 40px;
+    opacity: 0.9;
 }
 
 .footer button {
@@ -410,21 +416,23 @@
 
 .footer button:hover {
     background-color: #f0f0f0;
+    transform: translateY(-3px);
 }
 
+/* ===== FOOTER ===== */
 .clean_footer {
     background: #071217;
     color: #f7f7f7;
-    padding: 4vw 2.5vw;
+    padding: 60px 5%;
     font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 1.4vw;
+    gap: 25px;
     align-items: center;
 }
 
 .clean_top .lets-chat {
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: 600;
     margin: 0;
 }
@@ -438,12 +446,12 @@
 .clean_contact {
     text-align: center;
     line-height: 1.6;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
 }
 
 .clean_contact .addr,
 .clean_contact .phone {
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
 }
 
 .clean_bottom {
@@ -451,7 +459,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
 }
 
 .clean-sep {
@@ -465,11 +473,12 @@
 .clean_copyright {
     font-size: 0.9rem;
     color: rgba(255,255,255,0.8);
+    text-align: center;
 }
 
 .clean_nav {
     display: flex;
-    gap: 1rem;
+    gap: 20px;
     align-items: center;
 }
 
@@ -481,41 +490,30 @@
     padding-bottom: 4px;
 }
 
-.clean_nav a::before,
-.clean_nav a::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background: #f7f7f7;
-    bottom: 0;
-    width: 50%;
-    transform: scaleX(0);
-    transition: transform 240ms cubic-bezier(.2,.9,.2,1);
+.clean_nav a:hover {
+    color: #2ecc71;
 }
 
-.clean_nav a::before { left: 0; transform-origin: left; }
-.clean_nav a::after { right: 0; transform-origin: right; }
-.clean_nav a:hover::before,
-.clean_nav a:hover::after { transform: scaleX(1); }
+.clean_nav .sep { 
+    color: rgba(255,255,255,0.5); 
+}
 
-.clean_nav .sep { color: rgba(255,255,255,0.5); }
+/* ===== RESPONSIVE FIXES ===== */
 
-/* ===== RESPONSIVE - SIMPLE FIX ===== */
-
-/* Mobile & Tablet: Show hamburger, hide links by default */
+/* Tablet: 768px to 1024px */
 @media screen and (max-width: 1024px) {
+    /* Navbar */
     .navBar {
-        height: auto;
-        padding: 15px 0;
+        padding: 0;
     }
     
     .Nav_container {
+        height: 70px;
         padding: 0 20px;
     }
     
     .menu-toggle {
-        display: block !important; /* Force show hamburger */
-        right: 20px;
+        display: flex;
     }
     
     /* Hide links by default, show when active */
@@ -523,11 +521,12 @@
         position: fixed;
         top: 70px;
         left: 0;
+        right: 0;
         width: 100%;
         background: #ffffff;
         flex-direction: column;
         gap: 0;
-        padding: 15px 0;
+        padding: 20px 0;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         transform: translateY(-100%);
         opacity: 0;
@@ -549,9 +548,14 @@
     
     .Nav_links a {
         display: block;
-        padding: 12px 20px;
+        padding: 15px 20px;
         width: 100%;
         font-size: 1.1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .Nav_links a:last-child {
+        border-bottom: none;
     }
     
     .Nav_links a:hover {
@@ -560,76 +564,53 @@
     
     /* Header */
     .header {
-        height: auto;
-        min-height: auto;
         flex-direction: column;
-        padding: 40px 20px;
-        gap: 30px;
+        min-height: auto;
+        padding: 60px 20px;
+        gap: 40px;
     }
     
     .text {
-        width: 100%;
         max-width: 100%;
-        padding-left: 0;
+        padding: 0;
         align-items: center;
         text-align: center;
     }
     
     .text h1 {
-        font-size: 2.2rem;
-        padding-bottom: 15px;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
     }
     
     .text button {
-        width: 180px;
-        height: 50px;
-        font-size: 1rem;
-        border-radius: 30px;
+        margin-top: 30px;
     }
     
     .image {
         width: 100%;
-        height: 350px;
+        height: 400px;
+        order: -1;
     }
     
     /* Story */
     .story {
         flex-direction: column;
-        padding: 40px 20px;
-        gap: 30px;
-    }
-    
-    .Story_text {
-        width: 100%;
-        padding: 0;
+        padding: 60px 20px;
+        gap: 40px;
     }
     
     .Story_text h1 {
-        font-size: 2rem;
-        padding-bottom: 15px;
-    }
-    
-    .Story_text p {
-        font-size: 1rem;
+        font-size: 2.2rem;
     }
     
     .qoute {
         width: 100%;
-        gap: 20px;
-    }
-    
-    .qoute1 {
-        padding: 20px;
-    }
-    
-    .qoute1 p {
-        font-size: 1rem;
     }
     
     /* Cards */
     .centers_container {
         flex-direction: column;
-        gap: 25px;
+        gap: 30px;
     }
     
     .center-card {
@@ -638,77 +619,26 @@
     }
     
     .center-card:not(:last-child) {
-        border-right: none;
         border-bottom: 1px solid rgba(16,24,40,0.04);
-        padding-bottom: 25px;
+        padding-bottom: 30px;
     }
     
-    /* Footer */
+    /* Footer CTA */
     .footer {
-        padding: 40px 20px;
-        gap: 25px;
+        padding: 60px 20px;
     }
     
     .footer h1 {
-        font-size: 1.8rem;
-    }
-    
-    .footer p {
-        font-size: 1rem;
-    }
-    
-    .footer button {
-        width: 180px;
-        height: 50px;
-        font-size: 1rem;
-    }
-    
-    /* Clean Footer */
-    .clean_footer {
-        padding: 40px 20px;
-    }
-    
-    .clean_top .lets-chat {
-        font-size: 1.6rem;
-    }
-    
-    .clean_contact {
-        font-size: 0.9rem;
-    }
-    
-    .clean_nav a {
-        font-size: 0.9rem;
-    }
-}
-
-/* Desktop: Hide hamburger, show links inline */
-@media screen and (min-width: 1025px) {
-    .menu-toggle {
-        display: none !important;
-    }
-    
-    .Nav_links {
-        display: flex !important;
+        font-size: 2rem;
     }
 }
 
 /* Mobile: 480px to 767px */
 @media screen and (max-width: 767px) {
-    /* HOMEPAGE MOBILE: remove extra gap under navbar */
-    nav.navBar {
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important;
-    }
-
-    /* Ensure first content sits flush under the nav */
-    nav.navBar + .header,
-    nav.navBar + section,
-    nav.navBar + .hero {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
+    /* Navbar */
     .Nav_container {
-        padding: 10px 15px;
+        height: 60px;
+        padding: 0 15px;
     }
     
     .logo {
@@ -716,38 +646,39 @@
     }
     
     .menu-toggle {
-        right: 15px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .menu-toggle span {
+        width: 22px;
+        height: 2px;
+        margin: 2px 0;
     }
     
     .Nav_links {
         top: 60px;
-        padding: 10px 0;
     }
     
     /* Header */
     .header {
-        padding: 30px 15px;
-        gap: 25px;
+        padding: 40px 15px;
+        gap: 30px;
     }
     
     .text h1 {
         font-size: 1.8rem;
-    }
-    
-    .text button {
-        width: 100%;
-        max-width: 250px;
+        margin-bottom: 15px;
     }
     
     .image {
-        height: 250px;
-        order: -1;
+        height: 300px;
     }
     
     /* Story */
     .story {
-        padding: 30px 15px;
-        gap: 25px;
+        padding: 40px 15px;
+        gap: 30px;
     }
     
     .Story_text h1 {
@@ -755,22 +686,20 @@
     }
     
     .Story_text p {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
     
     .qoute1 {
-        padding: 15px;
+        padding: 20px;
     }
     
     /* Cards */
     .centers_container {
-        gap: 20px;
+        gap: 25px;
     }
     
-    .card-head {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+    .center-card {
+        padding: 20px;
     }
     
     .center-card h3 {
@@ -781,123 +710,97 @@
         font-size: 0.95rem;
     }
     
-    .center-btn {
-        padding: 10px;
-        font-size: 0.95rem;
-    }
-    
-    /* Footer */
+    /* Footer CTA */
     .footer {
-        padding: 30px 15px;
-        gap: 20px;
+        padding: 40px 15px;
     }
     
     .footer h1 {
         font-size: 1.6rem;
+        margin-bottom: 20px;
     }
     
     .footer p {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
     
     .footer button {
         width: 100%;
         max-width: 250px;
-        height: 45px;
-        font-size: 0.95rem;
     }
     
     /* Clean Footer */
     .clean_footer {
-        padding: 30px 15px;
-        gap: 15px;
+        padding: 40px 15px;
     }
     
     .clean_top .lets-chat {
         font-size: 1.4rem;
     }
     
-    .clean_contact {
-        font-size: 0.85rem;
-    }
-    
     .clean_nav {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
     }
     
     .clean_nav .sep {
         display: none;
     }
-    
-    .clean_nav a {
-        font-size: 0.85rem;
-        padding: 8px 0;
-    }
-}
-
-/* EXTRA-AGGRESSIVE HOMEPAGE MOBILE FIX: force zero gap under nav */
-@media screen and (max-width: 767px) {
-    /* Ensure nav sits at very top */
-    html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    nav.navBar {
-        position: sticky !important;
-        top: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        height: auto !important;
-    }
-
-    /* Force the first section to be flush under the nav */
-    main > section:first-of-type,
-    main > section:first-of-type .header,
-    .header {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-        position: relative !important;
-        top: 0 !important;
-    }
-
-    /* Remove any invisible offset from transforms */
-    .Nav_links,
-    .Nav_links.active {
-        transform: none !important;
-    }
-
-    /* If any script added inline styles, override them */
-    [style*="margin-top"] {
-        margin-top: 0 !important;
-    }
 }
 
 /* Small Mobile: below 480px */
 @media screen and (max-width: 480px) {
+    /* Header */
     .text h1 {
         font-size: 1.6rem;
     }
     
+    .text button {
+        width: 100%;
+        max-width: 200px;
+        height: 45px;
+        font-size: 0.95rem;
+    }
+    
+    .image {
+        height: 250px;
+    }
+    
+    /* Story */
     .Story_text h1 {
         font-size: 1.6rem;
     }
     
-    .footer h1 {
-        font-size: 1.4rem;
-    }
-    
+    /* Cards */
     .center-card h3 {
         font-size: 1.1rem;
     }
     
-    .center-card p {
-        font-size: 0.9rem;
+    /* Footer CTA */
+    .footer h1 {
+        font-size: 1.4rem;
     }
     
-    .clean_top .lets-chat {
-        font-size: 1.3rem;
+    .footer p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Desktop: Hide hamburger */
+@media screen and (min-width: 1025px) {
+    .menu-toggle {
+        display: none !important;
+    }
+    
+    .Nav_links {
+        display: flex !important;
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
     }
 }
 
@@ -911,6 +814,8 @@ img {
 html, body {
     overflow-x: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Make buttons tap-friendly on mobile */
@@ -919,89 +824,33 @@ html, body {
     .center-btn, 
     .text button, 
     .footer button,
-    .Nav_links a {
+    .menu-toggle {
         min-height: 44px;
-        display: inline-flex;
+        min-width: 44px;
+    }
+    
+    .Nav_links a {
+        min-height: 50px;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
-    
-    .menu-toggle {
-        min-height: 44px;
-    }
 }
 
-/* FINAL HOMEPAGE-ONLY MOBILE OVERRIDE: remove any remaining top gap */
+/* Fix for mobile layout spacing */
 @media screen and (max-width: 767px) {
-    /* target the nav and the very first content section */
-    nav.navBar {
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important;
-    }
-
-    /* Remove any top spacing on the first section/hero/header */
-    main > section:first-of-type,
-    main > section:first-of-type .header,
-    .header,
-    .hero,
-    .contact-hero {
+    body {
+        padding-top: 0 !important;
         margin-top: 0 !important;
-        padding-top: 0 !important;
     }
-
-    /* ensure Nav_container padding doesn't add visible gap */
-    .Nav_container {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-}
-
-/* Mobile navbar spacing fix: remove gap under sticky nav */
-@media screen and (max-width: 767px) {
-    html, body, main {
-        margin: 0;
-        padding: 0;
-    }
-
-    nav.navBar {
+    
+    .navBar {
         position: sticky;
         top: 0;
-        z-index: 9999;
     }
-
-    /* Ensure the first element after nav sits flush against it */
-    nav.navBar + * {
+    
+    .header {
         margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
-}
-
-/* Aggressive reset for first-section spacing on small screens */
-@media screen and (max-width: 767px) {
-    nav.navBar + section,
-    nav.navBar + .header,
-    nav.navBar + .hero,
-    nav.navBar + .contact-hero {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    /* Also remove top padding inside common hero/header blocks */
-    .header, .hero, .contact-hero {
-        padding-top: 0 !important;
-    }
-}
-
-/* HOMEPAGE ONLY: aggressive mobile reset to remove any top gap */
-@media screen and (max-width: 767px) {
-    /* ensure first content sits flush under the nav on homepage */
-    nav.navBar + * {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    /* remove top padding from common header sections */
-    .header, .hero {
         padding-top: 0 !important;
     }
 }
